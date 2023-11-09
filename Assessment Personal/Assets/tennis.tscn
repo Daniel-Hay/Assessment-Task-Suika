@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6it3vmimelqe"]
+
+[ext_resource type="Texture2D" uid="uid://dqs6nk4ka77x0" path="res://PNG/Default/ball_blue_small.png" id="1_dafso"]
+[ext_resource type="Script" path="res://Assets/tennis.gd" id="1_i6csl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rr6ny"]
+bounce = 0.27
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jqu74"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahdgx"]
+radius = 22.0
+
+[node name="Tennis" type="RigidBody2D" groups=["tennis"]]
+physics_material_override = SubResource("PhysicsMaterial_rr6ny")
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_i6csl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(28, -2)
+shape = SubResource("CircleShape2D_jqu74")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(27, -3)
+scale = Vector2(1.375, 1.375)
+texture = ExtResource("1_dafso")
+
+[node name="Area2D" type="Area2D" parent="." groups=["tennis"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(27, -3)
+shape = SubResource("CircleShape2D_ahdgx")

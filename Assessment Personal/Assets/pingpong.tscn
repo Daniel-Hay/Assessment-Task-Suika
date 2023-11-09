@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dscihgtc7te4l"]
+
+[ext_resource type="Texture2D" uid="uid://d3dtwxrkfxex1" path="res://PNG/Default/ball_red_small.png" id="1_87ybs"]
+[ext_resource type="Script" path="res://Assets/pingpong.gd" id="1_a6ov6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kktyh"]
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7u3xl"]
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6r1xn"]
+radius = 18.0
+
+[node name="Ping Pong" type="RigidBody2D" groups=["ping", "pong"]]
+position = Vector2(21, 4)
+physics_material_override = SubResource("PhysicsMaterial_kktyh")
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_a6ov6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(22, 0)
+shape = SubResource("CircleShape2D_7u3xl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(22, -2.02656e-06)
+scale = Vector2(1.125, 1.125)
+texture = ExtResource("1_87ybs")
+
+[node name="Area2D" type="Area2D" parent="." groups=["pong"]]
+position = Vector2(24, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 12)
+shape = SubResource("CircleShape2D_6r1xn")

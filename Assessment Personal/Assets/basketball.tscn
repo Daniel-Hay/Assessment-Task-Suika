@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://vaobudph82j2"]
+
+[ext_resource type="Texture2D" uid="uid://g4s8n0uwexs8" path="res://PNG/Default/ball_blue_large.png" id="1_3egpb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0chtg"]
+radius = 58.1378
+
+[node name="basketball" type="RigidBody2D" groups=["basketball"]]
+max_contacts_reported = 1
+contact_monitor = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(60, -2)
+shape = SubResource("CircleShape2D_0chtg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(61, -2)
+scale = Vector2(1.84375, 1.84375)
+texture = ExtResource("1_3egpb")

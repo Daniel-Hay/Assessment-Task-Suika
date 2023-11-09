@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bojhax22306cr"]
+
+[ext_resource type="Texture2D" uid="uid://b1gc2r4g08wr4" path="res://PNG/Default/ball_red_large_alt.png" id="1_ndqpx"]
+[ext_resource type="Script" path="res://Assets/baseball.gd" id="1_v8r42"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_muiku"]
+radius = 39.0128
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ceior"]
+radius = 39.0128
+
+[node name="baseball" type="RigidBody2D" groups=["base", "baseball"]]
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_v8r42")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(43, 0)
+shape = SubResource("CircleShape2D_muiku")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(43, 0.500001)
+scale = Vector2(1.21875, 1.20313)
+texture = ExtResource("1_ndqpx")
+
+[node name="Area2D" type="Area2D" parent="." groups=["base"]]
+position = Vector2(43, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ceior")
