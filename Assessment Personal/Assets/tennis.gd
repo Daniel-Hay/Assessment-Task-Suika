@@ -23,5 +23,13 @@ func handle_collision(body):
 	ball.global_position = (global_position + body.global_position) / 2
 	get_parent().add_child.call_deferred(ball)
 
-
+func disable_physics():
+	gravity_scale = 0
+	collision_layer = 0
+	collision_mask = 0
+	
+func enable_physics():
+	gravity_scale = 1
+	collision_layer = 1
+	collision_mask = 1
 

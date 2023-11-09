@@ -18,11 +18,7 @@ func _physics_process(_delta):
 		drop_ball()
 		
 	if current_ball.gravity_scale == 0:
-		var ball_x = clamp(
-			get_global_mouse_position().x,
-			left_marker.global_position.x,
-			right_marker.global_position.x
-		)
+		var ball_x = get_ball_x()
 		current_ball.global_position.x = ball_x
 	
 	
@@ -31,12 +27,23 @@ func create_ball(position):
 	var balls = [pingpong_scene, tennis_scene]
 	var kinds = balls[randi()% 2]
 	var ball = kinds.instantiate()
-	ball.gravity_scale = 0
+	ball.disable_physics()
 	ball.global_position = position
-	add_child(ball)
+	add_child.call_deferred(ball)
 	return ball
-	
+
+func get_ball_x():
+	return clamp(
+			get_global_mouse_position().x,
+			left_marker.global_position.x,
+			right_marker.global_position.x
+		)
+
+
 func drop_ball():
-	current_ball.gravity_scale = 1
+	current_ball.enable_physics()
 	current_ball = create_ball((left_marker.global_position + right_marker.global_position) / 2)
 
+func _on_full_area_entered(area):
+	print('dead')
+	get_tree().quit()
