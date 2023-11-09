@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bojhax22306cr"]
+[gd_scene load_steps=6 format=3 uid="uid://bojhax22306cr"]
 
 [ext_resource type="Texture2D" uid="uid://b1gc2r4g08wr4" path="res://PNG/Default/ball_red_large_alt.png" id="1_ndqpx"]
 [ext_resource type="Script" path="res://Assets/baseball.gd" id="1_v8r42"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_767tu"]
+bounce = 0.2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_muiku"]
 radius = 39.0128
@@ -10,6 +13,7 @@ radius = 39.0128
 radius = 39.0128
 
 [node name="baseball" type="RigidBody2D" groups=["base", "baseball"]]
+physics_material_override = SubResource("PhysicsMaterial_767tu")
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_v8r42")

@@ -93,7 +93,7 @@ position = Vector2(789, 162)
 position = Vector2(600, 130)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Full"]
-position = Vector2(-5, -4)
+position = Vector2(-3, -13)
 shape = SubResource("RectangleShape2D_nl5nj")
 
 [connection signal="area_entered" from="Full" to="." method="_on_full_area_entered"]
