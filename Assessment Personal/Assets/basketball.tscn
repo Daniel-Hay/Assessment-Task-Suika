@@ -18,6 +18,7 @@ position = Vector2(60, -2)
 shape = SubResource("CircleShape2D_0chtg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.729412, 0, 1)
 position = Vector2(61, -2)
 scale = Vector2(1.84375, 1.84375)
 texture = ExtResource("1_3egpb")

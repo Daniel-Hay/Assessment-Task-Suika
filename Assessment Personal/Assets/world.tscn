@@ -87,7 +87,7 @@ polygon = PackedVector2Array(61, 32, -32, -62, -56, -62, -62, -49, -60, 54, -48,
 position = Vector2(387, 161)
 
 [node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(789, 162)
+position = Vector2(780, 164)
 
 [node name="Full" type="Area2D" parent="."]
 position = Vector2(600, 130)

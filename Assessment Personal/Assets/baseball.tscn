@@ -23,6 +23,7 @@ position = Vector2(43, 0)
 shape = SubResource("CircleShape2D_muiku")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0.243137, 1)
 position = Vector2(43, 0.500001)
 scale = Vector2(1.21875, 1.20313)
 texture = ExtResource("1_ndqpx")
